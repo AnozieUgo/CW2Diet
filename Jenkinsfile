@@ -17,7 +17,7 @@ pipeline {
 
     stage("deploy"){
       steps{
-        echo "deploying the application..."
+        echo "docker image push uanozie200/js_server_jenkins:1.0"
       }
     }
    }
