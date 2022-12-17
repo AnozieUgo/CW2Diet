@@ -3,6 +3,8 @@ pipeline {
    stages {
     stage("build"){
       steps {
+ 	sh "docker container stop js_server_jenkins"
+ 	sh "docker container stop js_server_cw2"
  	sh "docker container rm js_server_jenkins"
  	sh "docker container rm js_server_cw2"
  	echo "Building docker image for js_server_cw2"
