@@ -3,7 +3,7 @@ pipeline {
    stages {
     stage("build"){
       steps {
-        echo "building the application..."
+        sh "docker image build --tag $DOCKERID/js_server_jenkins:1.0 ."
       }
     }
 
