@@ -21,7 +21,7 @@ pipeline {
       steps{
  	sh "docker login -u='uanozi200' -p='Childofgod2100'"
         sh "docker image push uanozi200/js_server_cw2:1.0"
- 	sh "ansible-playbook k8s_jenkins.yml"
+ 	sh "kubectl create deployment kubernetes-bootcamp --image=https://hub.docker.com/repository/docker/uanozi200/js_server_cw2"
       }
     }
    }
