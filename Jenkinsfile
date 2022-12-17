@@ -3,6 +3,8 @@ pipeline {
    stages {
     stage("build"){
       steps {
+ 	sh "docker image rm --force js_server_jenkins"
+ 	sh "docker image rm --force js_server_cw2"
  	echo "Building docker image for js_server_cw2"
         sh "docker image build --tag uanozi200/js_server_cw2:1.0 ."
       }
