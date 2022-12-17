@@ -1,13 +1,7 @@
-CODE_CHANGES = getGitChanges()
 pipeline {
   agent any
    stages {
     stage("build"){
-      when {
-	expression {
-	  CODE_CHANGES == true
-        }
-      }
       steps {
         sh "docker image build --tag uanozi200/js_server_jenkins:1.0 ."
       }
