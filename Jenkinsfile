@@ -19,7 +19,7 @@ pipeline {
 
     stage("deploy"){
       steps{
-        sh "docker image push uanozie200/js_server_cw2:1.0"
+        sh "docker image push uanozi200/js_server_cw2:1.0"
       }
     }
    }
