@@ -1,0 +1,9 @@
+-  name: A playbook to install kubectl
+   hosts: localhost
+   user: ubuntu
+   become: no
+
+   tasks:
+   - name: Deploy to Kubernetes
+     shell:
+       cmd: kubectl create deployment kubernetes-bootcamp --image=https://hub.docker.com/repository/docker/uanozi200/js_server_cw2

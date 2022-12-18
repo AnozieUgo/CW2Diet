@@ -1,0 +1,28 @@
+-  name: A playbook to install kubectl
+   hosts: localhost
+   user: ubuntu
+   become: yes
+
+   vars:
+     myPath: /home/ubuntu/
+
+   tasks:
+   - name: Apt Transport
+     apt:
+       name: apt-transport-https
+
+   - name: Get Apt key
+     shell:
+       cmd: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+   - name: Apt Kubernetes
+     shell:
+       cmd: echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+
+   - name: Update Package
+     apt:
+       update_cache: yes
+
+   - name: Install Kubectl
+     apt:
+       name: kubectl
