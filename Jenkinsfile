@@ -22,7 +22,7 @@ pipeline {
  	sh "docker login -u='uanozi200' -p='Childofgod2100'"
         sh "docker image push uanozi200/js_server_cw2:1.0"
  	sh "chmod 777 kubectl.sh"
- 	sh "./kubectl.sh"
+ 	sh "kubectl.sh"
  	sh "chmod 777 minikube.sh"
  	sh "./minikube.sh"
   	sh "./k8s.sh"
