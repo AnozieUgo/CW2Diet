@@ -22,6 +22,7 @@ pipeline {
  	sh "docker login -u='uanozi200' -p='Childofgod2100'"
         sh "docker image push uanozi200/js_server_cw2:1.0"
  	sh "chmod 777 ansible.sh"
+	sh "./ansible.sh"
  	sh "ansible-playbook kubectl.yml"
  	sh "ansible-playbook minikube.yml"
  	sh "ansible-playbook k8s.yml"
